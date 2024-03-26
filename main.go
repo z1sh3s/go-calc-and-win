@@ -53,6 +53,7 @@ func getUserAttack() int {
 	total := 0
 
 	for i := 0; i < 5; i++ {
+		fmt.Println("начало i=", i, "total=", total)
 		inputAttack := input("Введи тип атаки: ")
 
 		var attackValue int
@@ -69,6 +70,7 @@ func getUserAttack() int {
 		}
 		fmt.Println("Количество очков твоей атаки:", attackValue)
 		total += 1
+		fmt.Println("конец attackValue=", attackValue, "total=", total)
 	}
 	return total
 }
@@ -84,7 +86,7 @@ func runGame() bool {
 		fmt.Println("В этот раз не повезло :( Бой проигран.")
 	}
 	answer := input("Чтобы сыграть ещё раз, введи букву [y] или [Y]: ")
-	return answer == "Y"
+	return answer == "Y" || answer == "y"
 }
 
 func main() {
